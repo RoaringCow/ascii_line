@@ -1,10 +1,10 @@
 const ROWS: usize = 100;
 const COLS: usize = 100;
 
-
 fn main() {
     let mut grid = vec![vec![' '; COLS]; ROWS];
-    plot_line(&mut grid, 20, 1, 80, 90);
+    plot_line(&mut grid,10, 10, 50, 40);
+
     print_grid(&grid);
 }
 
@@ -25,7 +25,7 @@ fn plot_line_high(grid: &mut Vec<Vec<char>>, x0: i32, y0: i32, x1: i32, y1: i32)
         plot(grid, x, y);
         if d > 0 {
             x = x + xi;
-            d = d + 2 * (dx - dy);
+            d = d + (2 * (dx - dy));
         } else {
             d = d + 2 * dx;
         }
@@ -52,7 +52,7 @@ fn plot_line_low(grid: &mut Vec<Vec<char>>, x0: i32, y0: i32, x1: i32, y1: i32) 
             y = y + yi;
             d = d + 2 * (dy - dx);
         } else {
-            d = d + 2 * dx;
+            d = d + 2 * dy;
         }
     }
 }
